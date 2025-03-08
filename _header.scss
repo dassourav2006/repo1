@@ -1,0 +1,117 @@
+
+@import '_mixin';
+@import '_responsive';
+@import '_cards';
+
+.container{
+    max-width: 1200px;
+    margin: auto
+}
+
+.header-row{
+    // @include flex(center,space-between);
+    @include padding(0px,20px);
+    border-bottom: 1.5px solid #ffffff;
+    // height: 100px;
+    .logo img{
+        max-height: 100px;
+          @include mobile{
+               min-width: 10vh;
+            }
+    }
+    li{
+        font-family: nth($font-family,1);
+        font-size: 2rem;
+    }
+    
+    .col-8{
+        @include flex(center,space-between);
+        height: 100%;
+        // @include mobile{
+        //     flex-direction: column
+        // }
+        ul{
+            @include flex(center,space-around);
+            gap: 20px;
+            // @include mobile{
+            //     flex-direction: column
+            // }
+            li{
+                list-style: none;
+                border-right: 1px solid #ffffff;
+                @include padding(0px,20px);
+                a:hover {
+                   color: aqua;
+                  }
+                
+                a{
+                    text-decoration:none;
+                    color: #ffffff;
+                    @include mobile{
+                        font-size: clamp(1.2rem,5vw,2rem)
+                     }
+                }
+  
+}
+        }
+    }
+}
+.text{
+    padding-top: 30px;
+    font-family: nth($font-family,1);
+    font-size: 3rem;
+    z-index: 1;
+}
+.hero{
+    position: relative;
+    min-height: 600px;
+    .text span{
+        font-size: 5rem;
+        font-weight: 700;
+        font-family: nth($font-family,1);
+        padding-right: 10px;
+        border-right: 2px solid;
+        white-space: nowrap;
+        display: inline-block;
+        overflow: hidden;
+        animation:blink 0.8s ease infinite,type 2s steps(14,end) infinite;
+        @include mobile{
+            font-size: clamp(1.2rem,5vw,2rem)
+         }
+    }
+    .text h1{
+        @include mobile{
+            font-size: clamp(1.2rem,5vw,2rem)
+         }
+    }
+    }
+
+@keyframes blink {
+    from{
+        border-color: #2e2e2e;
+    }
+    to{
+        border-color: transparent;
+    }
+}
+@keyframes type {
+    0%{
+        width: 0%;
+    }
+    50%{
+        width: 50%;
+    }
+    100%{
+        max-width: 100%;
+    }
+}
+.container-fulid{
+    .myskill{
+    text-align: center;
+    font-family: nth($font-family,1);
+    font-size: 1.5rem;
+   
+    }
+}
+
+

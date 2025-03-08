@@ -1,0 +1,359 @@
+.card-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 20px 10px;
+}
+
+.card {
+  padding-top: 50px;
+  width: 300px;
+  height: 500px;
+  perspective: 1000px;
+}
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+.card-inner {
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+}
+.card-inner_front {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+}
+.card-inner_front h2 {
+  font-size: 1.5rem;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-family: "roboto";
+}
+.card-inner_front .icon img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: rgb(83, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.card-inner_back {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(199, 194, 194);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  text-align: center;
+}
+.card-inner_back h1 {
+  color: black;
+}
+.card-inner_back p {
+  color: white;
+}
+.card-inner .profile img {
+  max-width: 100px;
+  border-radius: 50%;
+}
+.card-inner button {
+  padding: 10px 10px;
+  color: rgb(0, 0, 0);
+  background-color: beige;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+}
+.card-inner button:hover {
+  color: rgb(247, 253, 253);
+  background-color: black;
+}
+
+h1 {
+  font-family: "roboto";
+  font-size: 3.2rem;
+}
+
+p {
+  font-family: "roboto";
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.header-row {
+  padding: 0px 20px;
+  border-bottom: 1.5px solid #ffffff;
+}
+.header-row .logo img {
+  max-height: 100px;
+}
+@media screen and (min-width: 300px) and (max-width: 768px) {
+  .header-row .logo img {
+    min-width: 10vh;
+  }
+}
+.header-row li {
+  font-family: "roboto";
+  font-size: 2rem;
+}
+.header-row .col-8 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: 100%;
+}
+.header-row .col-8 ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.header-row .col-8 ul li {
+  list-style: none;
+  border-right: 1px solid #ffffff;
+  padding: 0px 20px;
+}
+.header-row .col-8 ul li a:hover {
+  color: aqua;
+}
+.header-row .col-8 ul li a {
+  text-decoration: none;
+  color: #ffffff;
+}
+@media screen and (min-width: 300px) and (max-width: 768px) {
+  .header-row .col-8 ul li a {
+    font-size: clamp(1.2rem, 5vw, 2rem);
+  }
+}
+
+.text {
+  padding-top: 30px;
+  font-family: "roboto";
+  font-size: 3rem;
+  z-index: 1;
+}
+
+.hero {
+  position: relative;
+  min-height: 600px;
+}
+.hero .text span {
+  font-size: 5rem;
+  font-weight: 700;
+  font-family: "roboto";
+  padding-right: 10px;
+  border-right: 2px solid;
+  white-space: nowrap;
+  display: inline-block;
+  overflow: hidden;
+  animation: blink 0.8s ease infinite, type 2s steps(14, end) infinite;
+}
+@media screen and (min-width: 300px) and (max-width: 768px) {
+  .hero .text span {
+    font-size: clamp(1.2rem, 5vw, 2rem);
+  }
+}
+@media screen and (min-width: 300px) and (max-width: 768px) {
+  .hero .text h1 {
+    font-size: clamp(1.2rem, 5vw, 2rem);
+  }
+}
+
+@keyframes blink {
+  from {
+    border-color: #2e2e2e;
+  }
+  to {
+    border-color: transparent;
+  }
+}
+@keyframes type {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 50%;
+  }
+  100% {
+    max-width: 100%;
+  }
+}
+.container-fulid .myskill {
+  text-align: center;
+  font-family: "roboto";
+  font-size: 1.5rem;
+}
+
+.iamge img {
+  position: absolute;
+  top: -30%;
+  left: 80%;
+  right: 0%;
+  z-index: -1;
+  max-width: 800px;
+}
+@media screen and (min-width: 300px) and (max-width: 768px) {
+  .iamge img {
+    background-image: center;
+  }
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: 400px;
+  gap: 10px;
+  padding-top: 40px;
+}
+.gallery div {
+  overflow: hidden;
+  position: relative;
+}
+.gallery div::after {
+  content: "";
+  width: 0%;
+  height: 0%;
+  background-color: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.5s ease-in-out;
+}
+.gallery div:hover::after {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.gallery div h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  margin: auto;
+  color: black;
+  z-index: 99;
+}
+.gallery div img {
+  transition: all 0.4s ease-in-out;
+}
+.gallery div img:hover {
+  transform: scale(120%);
+}
+.gallery div:hover h2 {
+  color: azure;
+}
+.gallery .img-2 {
+  grid-row: span 2;
+}
+.gallery .img-7 img {
+  border-radius: 50%;
+  overflow: hidden;
+}
+.gallery h2 {
+  text-align: center;
+}
+
+.text2 {
+  text-align: center;
+  padding-top: 30px;
+}
+
+.imge {
+  max-width: 50px;
+  padding-top: 5px;
+}
+
+.group h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  padding-block: 20px;
+}
+.group .form form {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.group div {
+  border-radius: 5px;
+  background-color: #f3ecec;
+  padding: 20px;
+}
+
+input[type=text], select {
+  max-width: 500px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input[type=submit] {
+  max-width: 300px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+}
+input[type=submit] a {
+  font-family: "roboto";
+  font-size: 1.5rem;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.container-fulid1 {
+  position: relative;
+}
+
+body {
+  background-color: rgb(215, 218, 218);
+}
+
+/*# sourceMappingURL=style.css.map */

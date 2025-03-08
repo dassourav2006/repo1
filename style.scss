@@ -1,0 +1,24 @@
+@import '_header';
+@import'_banner';
+@import '_responsive';
+@import'_gallery';
+@import'_form';
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+.container-fulid1{
+    position: relative;
+    
+}
+body{
+    background-color: rgb(215, 218, 218);
+}
+
